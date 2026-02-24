@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Form</title>
+    </head>
+    <script>
+        
+        function FormValidate(){
+           let name=document.forms["student"]["name"].value;
+           let age=document.forms["student"]["age"].value;
+           let email=document.forms["student"]["email"].value;
+           let department=document.forms["student"]["department"].value;
+           let gender=document.querySelector('input[name="gender"]:checked')
+           let skill=document.querySelectorAll('input[name="skill[]"]:checked')
+           let dob=document.forms["student"]["dob"].value;
+          if(name===""){
+            alert("enter name");
+            return false;
+
+          }
+          if(age==="" || age<=0){
+            alert("enter age");
+            return false;
+
+          }
+          if(email==="" ){
+            alert("email invalid");
+            return false;
+
+          }
+
+          if( !gender){
+            alert("select gender");
+            return false;
+
+          }
+          if(skill.length===0){
+            alert("add skills");
+            return false;
+          }
+
+          if (department === "") {
+                alert("Select department");
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+    <body>
+        
+    
+
+<form name='student'action="Form.php" method="post" onsubmit="return FormValidate()">
+    <h1>Student Form</h1>
+<label>Name:</label>    
+<input type="text"  name="name"> <br><br>
+<label for="">Age:</label>
+<input type="number" name="age"><br> <br>
+<label>Date of Birth:</label>
+<input type="date"  name="dob"><br><br>
+<label for="">E-mail:</label>
+<input type="email" name="email" ><br><br>
+<label>Department:</label>
+<select name="department" id="">
+    <option value="CSE">CSE</option>
+    <option value="EEE">EEE</option>
+    <option value="ESE">ESE</option>
+    <option value="BBA">BBA</option>
+</select><br><br>
+
+<label>Gender:</label>
+<input type="radio" name="gender" id="" value="male">Male
+<input type="radio" name="gender" value="female">Female
+<br><br>
+
+<label>Skills:</label>
+<input type="checkbox" name="skill[]" value="HTML">HTML
+<input type="checkbox" name="skill[]" value="CSS">CSS
+<input type="checkbox" name="skill[]" value="Javascript">Javascript
+
+<br><br>
+
+<label for="">Address:</label>
+<textarea name="address"> </textarea><br><br>
+
+<button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

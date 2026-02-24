@@ -1,0 +1,20 @@
+<!DOCTYPE html> 
+
+<html>
+    <body>
+        <p style='border-style: solid' onmouseover="showmessage('I am a cs ')">Hover mouse here </p><br>
+        <button onclick="showmessage('button is clicked')">Click Button</button><br> <br>
+        <input onkeypress=" showkey(event)" type="text"><br>
+    </body>
+
+
+    <script>
+        function showmessage(msg){
+            alert(msg)
+        }
+        function showkey(e){
+            alert("Key pressed: " + e.key + " | I am a CSE student");
+
+        }
+    </script>
+</html>
